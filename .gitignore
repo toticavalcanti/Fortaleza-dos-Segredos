@@ -1,0 +1,57 @@
+# SO / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Env (deixe só os exemplos no git)
+.env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+backend/.env
+
+# Node/Next universais
+**/node_modules/
+**/.next/
+**/.next/cache/
+**/out/
+**/dist/
+**/.turbo/
+**/.vercel/
+**/coverage/
+**/.nyc_output/
+
+# Go backend
+backend/bin/
+backend/build/
+backend/dist/
+backend/*.exe
+backend/*.test
+backend/*.out
+backend/*.cover
+backend/*.prof
+backend/*.pprof
+
+# Terraform (devops)
+devops/.terraform/
+devops/*.tfstate
+devops/*.tfstate.*
+devops/crash.log
+devops/crash.*.log
+devops/*.tfvars
+devops/*.tfvars.json
+devops/*.tfplan
+devops/*_override.tf
+devops/*_override.tf.json
+devops/override.tf
+devops/override.tf.json
+!devops/.terraform.lock.hcl
