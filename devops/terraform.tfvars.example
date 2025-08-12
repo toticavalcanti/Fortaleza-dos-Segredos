@@ -1,0 +1,50 @@
+# terraform.tfvars.example
+# Copie este arquivo para terraform.tfvars e ajuste os valores conforme seu ambiente
+
+# Configurações do namespace
+namespace        = "fortress-security"
+create_namespace = true
+
+# Mensagem secreta da fortaleza
+secret_message = "🏰 Segredos bem guardados! Apenas exploradores autorizados podem ver esta mensagem! 🔐"
+
+# Configurações do cluster Kubernetes (para acesso local)
+kubeconfig_path = "~/.kube/config"
+kube_context    = null  # null = contexto atual
+
+# Para clusters remotos, descomente e configure:
+# kube_host           = "https://your-k8s-cluster.com"
+# kube_token          = "your-service-account-token"
+# kube_ca_certificate = "base64-encoded-ca-certificate"
+
+# Configurações das aplicações
+fortress_image = "python:3.11-alpine"
+explorer_image = "busybox:1.36"
+
+# Número de réplicas
+fortress_replicas = 1
+explorer_replicas = 1
+
+# Recursos computacionais da fortaleza
+fortress_resources = {
+  requests = {
+    cpu    = "100m"
+    memory = "128Mi"
+  }
+  limits = {
+    cpu    = "200m"
+    memory = "256Mi"
+  }
+}
+
+# Recursos computacionais do explorador
+explorer_resources = {
+  requests = {
+    cpu    = "50m"
+    memory = "64Mi"
+  }
+  limits = {
+    cpu    = "100m"
+    memory = "128Mi"
+  }
+}
